@@ -35,7 +35,7 @@ class FirstController extends Controller
 		
 		$request->validate([
             'title' => 'required|min:4|max:255',
-            'song' => 'required|file|mimes:mp3,ogg'
+            'song' => 'required|file|mimes:jpg,jpeg,png,svg'
 		]);
 		
         $song = new Song();
@@ -59,5 +59,10 @@ class FirstController extends Controller
 	public function changeLike($id) {
         Auth::user()->ILikeThem()->toggle($id);
         return back();
+    }
+
+	public function img($id) {
+		$img = Song::findorfail($id);
+        return view("firstcontroller.img", ["img" => $img]);
     }
 }

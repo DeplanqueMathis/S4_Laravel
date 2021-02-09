@@ -28,15 +28,15 @@ class DatabaseSeeder extends Seeder
             "password" => bcrypt("azerty")
         ]);
         DB::table('songs')->insert([
-            'title' => 'chanson 1',
-            'url' => 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3',
+            'title' => 'Image 1',
+            'url' => 'https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png',
             'user_id' => 1,
             'votes' => 1350
         ]);
 
         DB::table('songs')->insert([
-            'title' => 'chanson numéro deux',
-            'url' => 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3',
+            'title' => 'Image 2',
+            'url' => 'https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png',
             'user_id' => 1,
             'votes' => 10050
         ]);

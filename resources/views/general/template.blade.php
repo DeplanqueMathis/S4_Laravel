@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Mon application</title>
+<title>IMPOST style</title>
 <link rel='stylesheet' type='text/css' href='/css/style.css' />
 <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
 	<header>
-		<a id="logo" href="/">Mon application</a>
+		<a id="logo" href="/"><img src="/images/logo1.png"></a>
 		<nav>
 			<ul>
 				<li><a href="/">Home</a></li>
@@ -51,7 +51,9 @@
 			</ul>
 		</nav>
 	</header>
-	<audio controls id="audio"></audio>
+	<div>
+        <img id="img" src="">
+    </div>
 	@yield('content')
 </body>
 <script src="/js/jquery.js"></script>

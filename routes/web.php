@@ -26,6 +26,8 @@ Route::post('/songs', [FirstController::class, "store"])->middleware('auth');
 
 Auth::routes();
 
+Route::get('/img/{id}', [FirstController::class, 'img'])->where('id','[0-9]+');
+
 Route::get('/user/{id}', [FirstController::class, 'user'])->where('id','[0-9]+');
 
 Route::get('/changeLike/{id}', [FirstController::class, 'changeLike'])->middleware('auth')->where('id','[0-9]+');
