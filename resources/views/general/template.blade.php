@@ -12,31 +12,31 @@
 		<a id="logo" href="/"><img src="/images/logo1.png"></a>
 		<nav>
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/articles">Articles</a></li>
+				<li class="un"><a href="/" class="home">Home</a></li>
+				<li class="deux"><a href="/about" class="about">About</a></li>
+				<li class="trois"><a href="/articles" class="articles">Articles</a></li>
 				@guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <li class="nav-item un">
+                                    <a class="nav-link login" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
                             
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item deux">
+                                    <a class="nav-link register" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-							<li><a href="/songs/create">Poster</a></li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/user/{{Auth::user()->id}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+							<li class="un"><a href="/songs/create" class="poster">Poster</a></li>
+                            <li class="nav-item dropdown deux">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle profil" href="/user/{{Auth::user()->id}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 							</li>
-							<li>
+							<li class="trois">
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item logout" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -51,11 +51,12 @@
 			</ul>
 		</nav>
 	</header>
-	<div>
+	<div id="after-header">
         <img id="img" src="">
     </div>
 	@yield('content')
 </body>
 <script src="/js/jquery.js"></script>
 <script src="/js/divers.js"></script>
+<script src="/js/scroll.js"></script>
 </html>
