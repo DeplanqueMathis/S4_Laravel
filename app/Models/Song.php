@@ -13,4 +13,9 @@ class Song extends Model
         // SELECT * FROM users WHERE users.id=$this->user_id
         return $this->belongsTo("App\Models\User", "user_id");
     }
+
+    public function LikeImg() {
+        return $this->belongsToMany("App\Models\Song", "like", "img_id", "user_id");
+        // SEELECT * FROM users JOIN connection ON to_id=users.id WHERE from_id=$this->id
+    }
 }

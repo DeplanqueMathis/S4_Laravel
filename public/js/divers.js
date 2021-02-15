@@ -8,4 +8,10 @@ $(document).ready(function() {
         img.src =  $(this).attr('')
         $("#img").addClass("none");
     });
+
+    $("#search").submit(function(e) {
+        e.preventDefault();
+        let s = e.target.elements[0].value;
+        window.location.href = '/search/'+ s;
+    })
 })

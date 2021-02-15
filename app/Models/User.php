@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -54,5 +55,9 @@ class User extends Authenticatable
     public function TheyLikeMe() {
         return $this->belongsToMany("App\Models\User", "connection", "to_id", "from_id");
         // SEELECT * FROM users JOIN connection ON from_id=users.id WHERE to_id=$this->id
+    }
+
+    public function ILike() {
+        return $this->belongsToMany("App\Models\Song", "like", "user_id", "song_id");
     }
 }

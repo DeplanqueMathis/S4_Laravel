@@ -29,16 +29,18 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('songs')->insert([
             'title' => 'Image 1',
+            'description' => 'Voici la description de l\'image 1',
             'url' => 'https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png',
             'user_id' => 1,
-            'votes' => 1350
+            'votes' => 0
         ]);
 
         DB::table('songs')->insert([
             'title' => 'Image 2',
+            'description' => 'Ceci est la description de l\'image deux',
             'url' => 'https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png',
             'user_id' => 1,
-            'votes' => 10050
+            'votes' => 0
         ]);
     }
 }

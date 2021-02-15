@@ -35,11 +35,13 @@ class FirstController extends Controller
 		
 		$request->validate([
             'title' => 'required|min:4|max:255',
+            'description' => 'required|min:4|max:255',
             'song' => 'required|file|mimes:jpg,jpeg,png,svg'
 		]);
 		
         $song = new Song();
         $song->title = $request->input('title');
+        $song->description = $request->input('description');
 		$song->votes = 0;
 		$song->user_id = Auth::id();
 		$name = $request->file('song')->hashName();
@@ -64,5 +66,20 @@ class FirstController extends Controller
 	public function img($id) {
 		$img = Song::findorfail($id);
         return view("firstcontroller.img", ["img" => $img]);
+    }
+
+	public function like($id) {
+		$img = Song::findorfail($id);
+		$iduser = Auth::user();
+		$img->LikeImg()->toggle($iduser);
+		$img->votes = $img->LikeImg()->count();
+		$img->save();
+        return back();
+    }
+
+	public function search($search) {
+		$users = User::whereRaw("name LIKE CONCAT(?, '%')", [$search])->orderBy('id', 'desc')->get();
+		$songs = Song::whereRaw("title LIKE CONCAT('%', ?, '%')", [$search])->orderBy('votes', 'desc')->get();
+        return view("firstcontroller.search", ["search" => $search , "users" => $users , "songs" => $songs]);
     }
 }

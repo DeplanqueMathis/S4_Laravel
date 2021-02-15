@@ -8,7 +8,9 @@
         @csrf
         <input type="file" name="song">
         <br/>
-        <input type="text" name='title' placeholder="Title of the song" value="{{old('title')}}"/>
+        <input type="text" name='title' placeholder="Titre de ta photo" value="{{old('title')}}"/>
+        <br />
+        <input type="text" name='description' placeholder="Description de ton image" value="{{old('description')}}"/>
         <br />
         <input type="submit"/>
 

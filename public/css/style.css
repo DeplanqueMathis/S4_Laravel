@@ -1,12 +1,19 @@
+*{
+	cursor: url(../images/xp_arrow_l.cur),default;
+}
+
 body{
-	width: 90vw;
-	height: 100vh;
-	margin: 0 auto;
 	text-align: center;
-	background: linear-gradient(180deg, #FD9F1F, #ff00ba, #1FC8FF, #18ED18, #FD9F1F, #ff00ba);
+	margin: 0 auto;
+	background: linear-gradient(180deg, #ff00ba, #1FC8FF, #ff00ba);
     background-size: 100% 500%;
     animation: colorscroll 15s linear infinite;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+
+#annonce{
+	color: white;
+	text-transform: uppercase;
 }
 
 @keyframes colorscroll {
@@ -18,6 +25,162 @@ body{
     }
 }
 
+.back-back{
+	z-index: -1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.background-img{
+	z-index: -1;
+	position: fixed;
+	width: 20%;
+	height: auto;
+}
+
+.background-img>img{
+	width: 100%;
+}
+
+#background-img1{
+	top: 5vh;
+	left: 1vw;
+}
+
+#background-img1>.back-back{
+    animation: deplace 1s alternate infinite;
+	background-color: white;
+}
+
+@keyframes deplace {
+    0% {
+        left: 0;
+		top: 0;
+    }
+    100% {
+        left: 0.5rem;
+		top: 0.5rem;
+    }
+}
+
+#background-img2{
+	bottom: 5vh;
+	right: 1vw;
+}
+#background-img2>.back-back{
+    animation: deplacereverse 0.5s alternate infinite;
+	background-color: black;
+}
+
+@keyframes deplacereverse {
+    0% {
+        right: 0;
+		bottom: 0;
+    }
+    100% {
+        right: 0.5rem;
+		bottom: 0.5rem;
+    }
+}
+
+#background-img3{
+	bottom: 5vh;
+	left: 20vw;
+}
+
+#background-img3>.back-back{
+    animation: growth 1.5s alternate infinite;
+	background-color: pink;
+}
+
+@keyframes growth {
+    0% {
+		top: 0;
+		left: 0;
+        width: 100%;
+		height: 99%;
+    }
+    100% {
+		top: -1rem;
+		left: -1rem;
+        width: 110%;
+		height: 109%;
+    }
+}
+
+#background-img4{
+	z-index: -3;
+	top: 5vh;
+	right: 20vw;
+}
+
+#background-img4>.back-back{
+    animation: growth 2s alternate infinite;
+	background-color: pink;
+}
+
+@keyframes growth {
+    0% {
+		top: 0;
+		left: 0;
+        width: 100%;
+		height: 99%;
+    }
+    100% {
+		top: -1rem;
+		left: -1rem;
+        width: 110%;
+		height: 109%;
+    }
+}
+
+#background-img5{
+	top: 50vh;
+	right: 45vw;
+}
+
+#background-img5>.back-back{
+    animation: deplace 2.5s alternate infinite;
+	background-color: pink;
+}
+
+#background-img6{
+	z-index: -2;
+	top: 27vh;
+	right: 10vw;
+}
+
+#background-img6>.back-back{
+    animation: growth 2.5s alternate infinite;
+	background-color: white;
+}
+
+#background-img7{
+	bottom: 3vh;
+	left: 2vw;
+}
+
+@keyframes deplaceup {
+    0% {
+		top: 0;
+		left: 0;
+    }
+    100% {
+		top: -1rem;
+		left: 1rem;
+    }
+}
+
+#background-img7>.back-back{
+    animation: deplaceup 1s alternate infinite;
+	background-color: black;
+}
+
+#logo-img{
+	cursor: url(../images/xp_link_l.cur),pointer;
+}
+
 header{
 	position: fixed;
 	top: 0;
@@ -27,8 +190,7 @@ header{
 }
 
 header.small{
-	display: flex;
-	align-items: center;
+	width: 8%;
 }
 
 header.small #logo{
@@ -40,127 +202,173 @@ header.small #logo>img{
 }
 
 #after-header{
-	margin-top: 350px;
+	margin-top: 250px;
 }
 
-header>nav>ul{
-	display: flex;
-	list-style: none;
-	justify-content: center;
-	padding: 0;
-	margin-top: 3rem;
-	height: 3rem;
+nav{
 	width: 100%;
-	position: absolute;
-	font-family: "impact";
 }
 
-.un{
-	position: relative;
-	bottom: 100%;
+.liste-une{
+	list-style: none;
+	position: fixed;
+	top: 20vh;
+	padding: 0;
 }
 
-.un>a{
+.liste-une>li{
+	text-align: center;
 	padding: 1rem;
-	background-color: azure;
-	color: black;
 }
 
-.home:hover{
+.liste-une>li>a{
+	background-color: black;
+	writing-mode: vertical-rl;
+	width: 100%;
+	height: 20vh;
+}
+
+.liste-une>li>a>.hover{
+	background-color: white;
+	position: absolute;
+	width: 15vw;
+	height: 20vh;
+	left: -100vw;
+	transition-duration: 0.5s;
+}
+
+.liste-une>li>a:hover{
+	background-color: transparent;
+	color: transparent;
+}
+
+.liste-une>li>a.home>.hover{
 	background-image: url("../images/home.png");
 	background-size: 100% 100%;
-	color: transparent;
 	background-repeat: no-repeat;
-	background-position: center;
 }
 
-.poster:hover{
-	background-image: url("../images/poster.png");
-	background-size: 100% 100%;
-	color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.login:hover{
-	background-image: url("../images/login.png");
-	background-size: 100% 100%;
-	color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.deux{
-	position: relative;
-	bottom: 50%;
-}
-
-.register:hover{
-	background-image: url("../images/register.png");
-	background-size: 100% 100%;
-	color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.about:hover{
-	background-image: url("../images/about.png");
-	background-size: 100% 100%;
-	color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.profil:hover{
-	background-image: url("../images/profil.png");
-	background-size: 100% 100%;
-	color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.deux>a{
-	padding: 1rem;
-	background-color:darksalmon;
-	color: black;
-}
-
-.trois{
-	position: relative;
-	bottom: 0%;
-}
-
-.trois>a{
-	padding: 1rem;
-	background-color:lawngreen;
-	color: black;
-}
-
-.trois>div>a{
-	padding: 1rem;
-	background-color: lawngreen;
-	color: black;
-}
-
-.logout:hover{
-	background-image: url("../images/logout.png");
-	background-size: 100% 100%;
-	color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.articles:hover{
+.liste-une>li>a.articles>.hover{
 	background-image: url("../images/articles.png");
 	background-size: 100% 100%;
-	color: transparent;
 	background-repeat: no-repeat;
-	background-position: center;
+}
+
+.liste-une>li>a.about>.hover{
+	background-image: url("../images/about.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.liste-une>li>a:hover>.hover{
+	z-index: -1;
+	left: 0;
+}
+
+.liste-deux{
+	list-style: none;
+	position: fixed;
+	top: 20vh;
+	right: 0;
+	padding: 0;
+}
+
+.liste-deux>li{
+	text-align: center;
+	padding: 1rem;
+}
+
+.liste-deux>li>a{
+	background-color: black;
+	writing-mode: vertical-lr;
+	transform:rotate(180deg);
+	width: 100%;
+	height: 20vh;
+}
+
+.liste-deux>li>a.poster>.hover{
+	background-image: url("../images/poster.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.liste-deux>li>a.login>.hover{
+	background-image: url("../images/login.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.liste-deux>li>a.register>.hover{
+	background-image: url("../images/register.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.liste-deux>li>a.profil>.hover{
+	background-image: url("../images/profil.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.liste-deux>li>a>.hover{
+	background-color: white;
+	position: absolute;
+	width: 15vw;
+	height: 20vh;
+	right: 50vw;
+	transition-duration: 0.5s;
+	transform: rotate(180deg);
+}
+
+.liste-deux>li>a:hover{
+	background-color: transparent;
+	color: transparent;
+}
+
+.liste-deux>li>a:hover>.hover{
+	z-index: -1;
+	right: -12vw;
+}
+
+.liste-deux>li>div>a{
+	background-color: black;
+	writing-mode: vertical-lr;
+	transform:rotate(180deg);
+	width: 100%;
+	height: 20vh;
+}
+
+.liste-deux>li>div>a>.hover{
+	background-image: url("../images/logout.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transform: rotate(180deg);
+	background-color: white;
+	position: absolute;
+	width: 15vw;
+	height: 20vh;
+	right: 50vw;
+	transition-duration: 0.5s;
+}
+
+.liste-deux>li>div>a:hover{
+	background-color: transparent;
+	color: transparent;
+}
+
+.liste-deux>li>div>a:hover>.hover{
+	z-index: -1;
+	right: -12vw;
 }
 
 a{
+	cursor: url(../images/xp_link_l.cur),pointer;
 	color: white;
 	text-decoration: none;
+}
+
+a>span{
+	cursor: url(../images/xp_link_l.cur),pointer;
 }
 
 #liste-img{
@@ -168,7 +376,6 @@ a{
 	text-align: start;
 	list-style: none;
 	font-size: 8rem;
-	height: 500vh;
 }
 
 #img-preview>a>span{
@@ -189,4 +396,32 @@ a{
 
 .none{
 	display: none;
+}
+
+#img-title{
+	position: absolute;
+	writing-mode: vertical-lr;
+	transform:rotate(180deg);
+	left: 10vw;
+	top: 50%;
+	-webkit-text-stroke: 2px black;
+	font-size: 5rem;
+	color: white;
+	margin-bottom: 0.5rem;
+}
+
+#img-page-img{
+	width: 50%;
+}
+
+#desc{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.like{
+	color: white;
+	font-size: 2rem;
+	-webkit-text-stroke: 1px pink;
+	text-align: start;
 }
