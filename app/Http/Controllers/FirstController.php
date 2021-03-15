@@ -60,7 +60,7 @@ class FirstController extends Controller
 
 	public function changeLike($id) {
         Auth::user()->ILikeThem()->toggle($id);
-        return back();
+        return back()->with('toastr', ["status"=>"success", "message" => "Modification du suivi"]);
     }
 
 	public function img($id) {

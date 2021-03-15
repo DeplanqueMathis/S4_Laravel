@@ -4,8 +4,12 @@
 <meta charset="utf-8">
 <title>IMPOST style</title>
 <link rel='stylesheet' type='text/css' href='/css/style.css' />
+<link rel='stylesheet' type='text/css' href='/css/toastr.css' />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.pjax.js"></script>
+<script src="/js/toastr.min.js"></script>
 </head>
 
 <body>
@@ -132,9 +136,15 @@
         <div class="back-back">
         </div>
     </div>
-	@yield('content')
+    <div id="pjax-container">
+	    @yield('content')
+        @if(Session::has("toastr"))
+        <script>
+            toastr.{{Session::get('toastr')['status']}}('{{Session::get('toastr')['message']}}')
+        </script>
+        @endif
+    </div>
 </body>
-<script src="/js/jquery.js"></script>
 <script src="/js/divers.js"></script>
 <script src="/js/scroll.js"></script>
 </html>

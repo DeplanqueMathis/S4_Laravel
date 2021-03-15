@@ -9,9 +9,19 @@ $(document).ready(function() {
         $("#img").addClass("none");
     });
 
-    $("#search").submit(function(e) {
+    $('#search').submit(function (e) {
         e.preventDefault();
-        let s = e.target.elements[0].value;
-        window.location.href = '/search/'+ s;
-    })
-})
+        if ($.support.pjax)
+            $.pjax({url: "/search/" + e.target.elements[0].value, container: '#pjax-container'});
+        else
+            window.location.href = "/search/" + e.target.elements[0].value;
+    });
+});
+
+$(document).on('submit', 'form[data-pjax]', function(event) {
+    $.pjax.submit(event, '#pjax-container')
+});
+
+$(document).pjax('a', '#pjax-container');
+
+$(document).pjax('a', '#pjax-container');
