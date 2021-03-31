@@ -7,7 +7,11 @@ $(document).ready(function() {
     }, function(){
         img.src =  $(this).attr('')
         $("#img").addClass("none");
-    });
+    }),
+    $("a.img").click(function(e) {
+        $("#img").addClass("none");
+   });
+    
 
     $('#search').submit(function (e) {
         e.preventDefault();

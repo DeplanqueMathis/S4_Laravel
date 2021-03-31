@@ -2,7 +2,7 @@
 @section("content")
 <h1>Voici la liste des articles</h1>
 
-<ul>
+<ul class="article">
 	@foreach($articles as $id => $valeur)
 		<li><a href="/article/{{$id}}">{{$valeur}}</a></li>
 	@endforeach

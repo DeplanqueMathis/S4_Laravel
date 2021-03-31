@@ -14,7 +14,7 @@
         <p class="like">{{$img->votes}}<span class="material-icons">favorite</span></p>
     @endif
 
-    <p>{{$img->description}}</p><br/>
+    <p class="desc">{{$img->description}}</p><br/>
 
     <p>Cette image a été posté par : <a href="/user/{{$img->user->id}}">{{$img->user->name}}</a></p>
 </div>
