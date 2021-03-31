@@ -82,4 +82,15 @@ class FirstController extends Controller
 		$songs = Song::whereRaw("title LIKE CONCAT('%', ?, '%')", [$search])->orderBy('votes', 'desc')->get();
         return view("firstcontroller.search", ["search" => $search , "users" => $users , "songs" => $songs]);
     }
+
+	public function delete($img){
+		$img = Song::findorfail($img);
+		if($img->user_id == Auth::id()){
+			$img -> delete();
+		}
+		else{
+			return back();
+		}
+		return redirect("/");
+	}
 }

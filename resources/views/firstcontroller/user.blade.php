@@ -2,20 +2,21 @@
 @section("content")
 <h1>Bienvenu chez {{$user->name}}</h1>
 
-Suivi par : {{$user->TheyLikeMe()->count()}} personnes <br/>
-Suis : {{$user->ILikeThem()->count()}} personnes <br/>
+<div>
+<p class="followed">Suivi par : {{$user->TheyLikeMe()->count()}} personnes <br/></p>
+<p class="follow">Suis : {{$user->ILikeThem()->count()}} personnes <br/></p>
 @auth
         @if(Auth::id() != $user->id)
             @if(Auth::user()->ILikeThem->contains($user->id))
-                <a href="/changeLike/{{$user->id}}">Suivi par moi</a>
+                <a class="follow_button" href="/changeLike/{{$user->id}}">Tu suis ce BG</a>
             @else
-                <a href="/changeLike/{{$user->id}}">Pas du tout suivi par moi</a>
+                <a class="follow_button" href="/changeLike/{{$user->id}}">Genre tu follow pas ce BG ?</a>
             @endif
         @endif
 @endauth
 
-Propriétaire de {{$user->songs()->count()}} chansons : <br/>
-
+<p class="follow">Propriétaire de {{$user->songs()->count()}} images : <br/></p>
+</div>
 @include("partielle._song", ["songs" => $user->songs])
 
 @endsection

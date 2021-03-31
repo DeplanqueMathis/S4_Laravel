@@ -101,7 +101,7 @@
 	<div id="after-header">
         <img id="img" src="">
     </div>
-    <div id="background-img1" class="background-img">
+    <!--<div id="background-img1" class="background-img">
         <img src="/images/eye.jpg">
         <div class="back-back">
         </div>
@@ -134,7 +134,7 @@
     <div id="background-img7" class="background-img">
         <img src="/images/vaporwave.jpg">
         <div class="back-back">
-        </div>
+        </div>-->
     </div>
     <div id="pjax-container">
 	    @yield('content')

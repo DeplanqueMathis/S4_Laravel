@@ -35,3 +35,5 @@ Route::get('/user/{id}', [FirstController::class, 'user'])->where('id','[0-9]+')
 Route::get('/jaime/{id}', [FirstController::class, 'like'])->middleware('auth')->where('id','[0-9]+');
 
 Route::get('/changeLike/{id}', [FirstController::class, 'changeLike'])->middleware('auth')->where('id','[0-9]+');
+
+Route::get('/delete/{id}', [FirstController::class, 'delete'])->middleware('auth')->where('id','[0-9]+');

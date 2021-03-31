@@ -20,12 +20,14 @@ class DatabaseSeeder extends Seeder
         DB::table("users")->insert([
             'name' => "utilisateur 1",
             'email' => "utilisateur1@gmail.com",
-            "password" => bcrypt("azerty")
+            "password" => bcrypt("azerty"),
+            "img" => 'https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png'
         ]);
         DB::table("users")->insert([
             'name' => "utilisateur 2",
             'email' => "utilisateur2@gmail.com",
-            "password" => bcrypt("azerty")
+            "password" => bcrypt("azerty"),
+            "img" => 'https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png'
         ]);
         DB::table('songs')->insert([
             'title' => 'Image 1',

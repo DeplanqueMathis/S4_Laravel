@@ -5,7 +5,7 @@
 body{
 	text-align: center;
 	margin: 0 auto;
-	background: linear-gradient(180deg, #ff00ba, #1FC8FF, #ff00ba);
+	background: /*linear-gradient(180deg, #ff00ba, #1FC8FF, #ff00ba)*/ black;
     background-size: 100% 500%;
     animation: colorscroll 15s linear infinite;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
@@ -222,7 +222,7 @@ nav{
 }
 
 .liste-une>li>a{
-	background-color: black;
+	background-color: white;
 	writing-mode: vertical-rl;
 	width: 100%;
 	height: 20vh;
@@ -279,7 +279,7 @@ nav{
 }
 
 .liste-deux>li>a{
-	background-color: black;
+	background-color: white;
 	writing-mode: vertical-lr;
 	transform:rotate(180deg);
 	width: 100%;
@@ -331,7 +331,7 @@ nav{
 }
 
 .liste-deux>li>div>a{
-	background-color: black;
+	background-color: white;
 	writing-mode: vertical-lr;
 	transform:rotate(180deg);
 	width: 100%;
@@ -363,7 +363,7 @@ nav{
 
 a{
 	cursor: url(../images/xp_link_l.cur),pointer;
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 
@@ -419,10 +419,10 @@ a>span{
 	margin: 0 auto;
 }
 
-.like{
+.like,.user-link{
 	color: white;
 	font-size: 2rem;
-	-webkit-text-stroke: 1px pink;
+	-webkit-text-stroke: 1px gray;
 	text-align: start;
 }
 
@@ -444,7 +444,7 @@ a>span{
 
 #search>input{
 	cursor: url(../images/xp_link_l.cur),pointer;
-	border: 1vw black solid;
+	border: 0.5vw white solid;
 	animation: shake 0.5s;
 	animation-iteration-count: infinite;
 	background-color: transparent;
@@ -505,7 +505,7 @@ select:-webkit-autofill:focus {
 }
 
 .card-header{
-	text-shadow: 1px 1px 2px #ff00ba, 0 0 1em #1FC8FF, 0 0 0.2em #ff00ba;
+	/*text-shadow: 1px 1px 2px #ff00ba, 0 0 1em #1FC8FF, 0 0 0.2em #ff00ba;*/
 	font-size: 3vw;
 	font-weight: bold;
 	color: white;
@@ -525,31 +525,48 @@ select:-webkit-autofill:focus {
 
 .btn-primary{
 	cursor: url(../images/xp_link_l.cur),pointer;
-	border: 1vw black solid;
+	border: 0.5vw white solid;
 	background-color: transparent;
 	color: white;
 	text-transform: uppercase;
 	font-weight: bold;
-	text-shadow: 1px 1px 2px black;
+	text-shadow: 1px 1px 2px white;
 }
 
 .form-control{
 	text-align: center;
 	height: 3vh;
 	border-radius: 2rem;
+	border : 0.5vw white solid;
+	background-color: transparent;
+	color: white;
+}
+
+.form-control::placeholder{
+	color: white;
 }
 
 .form-control:-webkit-autofill,
 .form-control:-webkit-autofill:hover, 
 .form-control:-webkit-autofill:focus{
-	-webkit-text-fill-color: black;
-	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	-webkit-text-fill-color: white;
+	-webkit-box-shadow: 0 0 0px 1000px transparent inset;
 	transition: background-color 5000s ease-in-out 0s;
+}
+
+a.img{
+	color: white;
 }
 
 h1{
 	color: white;
-	text-shadow: 1px 1px 2px #ff00ba, 0 0 1em #1FC8FF, 0 0 0.2em #ff00ba;
+	/*text-shadow: 1px 1px 2px #ff00ba, 0 0 1em #1FC8FF, 0 0 0.2em #ff00ba;*/
+}
+
+h4{
+	margin-top: 8vh;
+	color: white;
+	/*text-shadow: 1px 1px 2px #ff00ba, 0 0 1em #1FC8FF, 0 0 0.2em #ff00ba;*/
 }
 
 p{
@@ -565,7 +582,11 @@ p{
 	list-style: none;
 	font-size: 1.5vw;
 	text-transform: uppercase;
-	text-shadow: 1px 1px 2px #ff00ba, 0 0 1em #1FC8FF, 0 0 0.2em #ff00ba;
+	/*text-shadow: 1px 1px 2px #ff00ba, 0 0 1em #1FC8FF, 0 0 0.2em #ff00ba;*/
+}
+
+.article>li>a{
+	color: white;
 }
 
 .desc{
@@ -574,4 +595,26 @@ p{
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: -10vh;
+}
+
+.follow, .followed{
+	margin: 0;
+}
+
+.followed{
+	margin-top: 10vh;
+}
+
+.follow_button{
+	color: white;
+	display: block;
+	padding: 0.5rem 1rem;
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+	border: white 1px solid;
+	text-shadow: 1px 1px 2px black;
 }

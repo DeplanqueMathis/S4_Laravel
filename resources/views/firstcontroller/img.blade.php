@@ -16,7 +16,10 @@
 
     <p class="desc">{{$img->description}}</p><br/>
 
-    <p>Cette image a été posté par : <a href="/user/{{$img->user->id}}">{{$img->user->name}}</a></p>
+    <p>Cette image a été posté par : <a class="user-link" href="/user/{{$img->user->id}}">{{$img->user->name}}</a></p>
+    @if(Auth::id() == $img->user->id)
+        <a class="like" href="/delete/{{$img->id}}">DELETE</a>
+    @endif
 </div>
 
 @endsection
